@@ -1,8 +1,10 @@
 package com.example.aws.profile;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class UserProfileService {
@@ -18,4 +20,7 @@ public class UserProfileService {
         return userProfileDataAccessService.getUserProfiles();
     }
 
+    public void uploadUserProfileImage(UUID userProfileId, MultipartFile file) {
+
+    }
 }
