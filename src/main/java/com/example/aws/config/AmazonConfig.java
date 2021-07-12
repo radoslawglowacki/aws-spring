@@ -3,6 +3,7 @@ package com.example.aws.config;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import lombok.AllArgsConstructor;
@@ -24,6 +25,6 @@ public class AmazonConfig {
                 Objects.requireNonNull(env.getProperty("AWS_ACCESS")),
                 Objects.requireNonNull(env.getProperty("AWS_SECRET")));
 
-        return AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).build();
+        return AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).withRegion(Regions.EU_WEST_3).build();
     }
 }

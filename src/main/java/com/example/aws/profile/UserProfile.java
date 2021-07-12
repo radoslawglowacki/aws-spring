@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Objects;
+import java.util.Optional;
 import java.util.UUID;
 @Getter
 @Setter
@@ -31,5 +32,9 @@ public class UserProfile {
     @Override
     public int hashCode() {
         return Objects.hash(userProfileId, username, profileImageLink);
+    }
+
+    public Optional<String> getProfileImageLink() {
+        return Optional.ofNullable(profileImageLink);
     }
 }
