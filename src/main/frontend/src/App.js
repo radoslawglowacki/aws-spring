@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React, {useState, useEffect, useCallback} from "react";
 import axios from "axios";
@@ -21,7 +20,7 @@ const UserProfiles = () => {
     return(<div key={index}>
       {userProfile.userProfileId ? (
           <img
-          src={`http://localhost:8084/api/v1/user-profile/${userProfile.userProfileId}/image/download`}/>) : null}
+          src={`http://localhost:8084/api/v1/user-profile/${userProfile.userProfileId}/image/download`} alt={"avatar"}/>) : null}
 
       <br/>
       <br/>
@@ -52,7 +51,7 @@ function Dropzone({userProfileId}) {
       console.log(err);
     })
 
-  }, [])
+  }, [userProfileId])
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
   return (
