@@ -20,7 +20,7 @@ const UserProfiles = () => {
     return(<div key={index}>
       <h1>{userProfile.username}</h1>
       <p>{userProfile.userProfileId}</p>
-      
+
     </div>)
   })
 }
